@@ -1,2 +1,3 @@
-console.log("Hello");
-console.log("Istal NPM");
+let inputUser = "Taufik";
+
+console.log(inputUser);
