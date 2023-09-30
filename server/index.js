@@ -1,2 +1,2 @@
-let inputUser = "Fuji Taufik Fahrul Rahman ss";
+let inputUser = "Fuji Taufik";
 console.log(inputUser);
