@@ -1,18 +1,24 @@
-// const express = require ('express')
-// const app = express ()
-// const port = 3000
-// const cors = require('cors')
+const express = require('express')
+const app = express()
+const port = 3000
 
-// app.use(cors())
-// app.get('/get-datas',(req,res)=>{
-//     res.status(200).json({
-//         "name" : "fuji taufik",
-//         "email" : "fujitaufik@gmail.com",
-//         "phone_number" : "08121989217"
-//     })
-// })
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
 
-// app.listen(port, () => {
-//     console.log(`Example app listeng on port ${port}`);
-// })
-console.log("HELLO");
+app.get('/hello', (req, res) => {
+    res.send('Hello World!')
+})
+
+app.get('/register', (req, res) => {
+   let { firstName, email } = req.body
+   console.log(`${firstName} dan ${email}`);
+   res.status(201).json({
+    "message" : `data atas nama ${firstName} dan email: ${email} Berhasil di tambahkan`
+   })
+})
+
+
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
